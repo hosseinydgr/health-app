@@ -42,5 +42,13 @@ export const THEME = createTheme({
         },
       },
     },
+    MuiSelect: {
+      styleOverrides: {
+        root: {
+          borderRadius: 21,
+          backgroundColor: "white",
+        },
+      },
+    },
   },
 });
