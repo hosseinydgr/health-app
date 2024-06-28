@@ -9,7 +9,7 @@ export default function Step({ setStep, num }) {
 
   return (
     <>
-      <Header num={num - 1} nextStepHandler={() => setStep(num)} />
+      <Header num={num - 1} prevStepHandler={() => setStep(num - 2)} />
 
       <Typography alignSelf="center" fontSize="36px">
         {titles[num - 4]}

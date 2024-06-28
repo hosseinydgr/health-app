@@ -10,7 +10,7 @@ import ArrowLeft from "../../../../public/arrow-left.svg";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-export default function Header({ num, nextStepHandler }) {
+export default function Header({ num, prevStepHandler }) {
   const router = useRouter();
   return (
     <>
@@ -20,7 +20,7 @@ export default function Header({ num, nextStepHandler }) {
       <Box display="flex" alignItems="center" gap="8px">
         <IconButton
           sx={{ bgcolor: "red", bgcolor: "#E3E4E3" }}
-          onClick={nextStepHandler}
+          onClick={prevStepHandler}
         >
           <Image src={ArrowLeft.src} width={24} height={24} />
         </IconButton>

@@ -1,9 +1,12 @@
-import { Box, Button, Stack, TextField, Typography } from "@mui/material";
+"use client";
+import { Button, Stack, TextField, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../../public/logo.svg";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
+  const router = useRouter();
   return (
     <Stack p="16px" gap="16px" minHeight="100vh" justifyContent="center">
       <Image
@@ -24,13 +27,16 @@ export default function Login() {
         <Typography>رمز عبور</Typography>
         <TextField></TextField>
       </Stack>
-      <Button type="submit" sx={{ mb: "32px" }}>
+      <Button
+        sx={{ mb: "32px" }}
+        onClick={() => router.push("/user/patient/register")}
+      >
         ورود
       </Button>
       <Typography alignSelf="center">
         حساب کاربری ندارید؟{" "}
         <Link
-          href="/signup"
+          href="/user/signup"
           style={{
             // textDecoration: "underline",
             borderBottom: "1px solid #60A5FA",
@@ -40,7 +46,7 @@ export default function Login() {
           ثبت نام کنید.
         </Link>
       </Typography>
-      <Link href="/forgot-password" style={{ alignSelf: "center" }}>
+      <Link href="/user/forgot-password" style={{ alignSelf: "center" }}>
         <Typography
           sx={{
             // textDecoration: "underline",

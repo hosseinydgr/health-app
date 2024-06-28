@@ -5,8 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import Logo from "../../../public/logo.svg";
+import { useRouter } from "next/navigation";
 
 export default function Signup() {
+  const router = useRouter();
   const [isPatient, setIsPatient] = useState(true);
   const [pass, setPass] = useState("");
   const [repeatedPass, setRepeatedPass] = useState("");
@@ -88,11 +90,18 @@ export default function Signup() {
           <Typography>خطا: تکرار رمز عبور مطابقت ندارد.</Typography>
         </Box>
       )}
-      <Button sx={{ mb: "32px" }}>ثبت‌نام</Button>
+      <Button
+        sx={{ mb: "32px" }}
+        onClick={() => {
+          if (isPatient) router.push("/user/patient/register");
+        }}
+      >
+        ثبت‌نام
+      </Button>
       <Typography alignSelf="center">
         حساب کاربری دارید؟{" "}
         <Link
-          href="/login"
+          href="/user/login"
           style={{
             // textDecoration: "underline",
             borderBottom: "1px solid #60A5FA",

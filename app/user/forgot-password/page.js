@@ -1,14 +1,16 @@
 "use client";
 
-import { Box, Button, Stack, TextField, Typography } from "@mui/material";
+import { Button, Stack, TextField, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../../public/logo.svg";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 let interval;
 
 export default function ForgotPassword() {
+  const router = useRouter();
   const [step, setStep] = useState(1);
   const [timer, setTimer] = useState(59);
 
@@ -48,7 +50,7 @@ export default function ForgotPassword() {
           <Typography alignSelf="center">
             حساب کاربری ندارید؟{" "}
             <Link
-              href="/signup"
+              href="/user/signup"
               style={{
                 // textDecoration: "underline",
                 borderBottom: "1px solid #60A5FA",
@@ -102,7 +104,7 @@ export default function ForgotPassword() {
           <Typography alignSelf="center" mt="60px">
             رمز عبور را بیاد آوردید؟{" "}
             <Link
-              href="/login"
+              href="/user/login"
               style={{
                 // textDecoration: "underline",
                 borderBottom: "1px solid #60A5FA",
@@ -127,7 +129,12 @@ export default function ForgotPassword() {
             <Typography>تکرار رمز عبور جدید</Typography>
             <TextField></TextField>
           </Stack>
-          <Button sx={{ mb: "32px" }}>تایید</Button>
+          <Button
+            sx={{ mb: "32px" }}
+            onClick={() => router.push("/user/patient/register")}
+          >
+            تایید
+          </Button>
         </>
       )}
     </Stack>

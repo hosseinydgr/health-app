@@ -4,7 +4,7 @@ import Header from "./Header";
 export default function StepTwo({ setStep }) {
   return (
     <>
-      <Header num={2} nextStepHandler={() => setStep(3)} />
+      <Header num={2} prevStepHandler={() => setStep(1)} />
       <Typography alignSelf="center" fontSize="36px">
         بیماری
       </Typography>

@@ -15,7 +15,7 @@ import Header from "./Header";
 export default function StepOne({ setStep }) {
   return (
     <>
-      <Header num={1} nextStepHandler={() => setStep(2)} />
+      <Header num={1} prevStepHandler={() => {}} />
 
       <Typography alignSelf="center" fontSize="36px">
         اطلاعات بیمار
