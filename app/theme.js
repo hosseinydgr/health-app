@@ -8,6 +8,10 @@ export const THEME = createTheme({
       main: "#60A5FA",
       contrastText: "#fff",
     },
+    error: {
+      main: "#F43F5E",
+      contrastText: "#fff",
+    },
   },
   typography: {
     fontFamily: `"Yekan Bakh", sans-serif`,

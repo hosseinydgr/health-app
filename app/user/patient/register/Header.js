@@ -18,10 +18,7 @@ export default function Header({ num, prevStepHandler }) {
         {`${num} از ۶`}
       </Typography>
       <Box display="flex" alignItems="center" gap="8px">
-        <IconButton
-          sx={{ bgcolor: "red", bgcolor: "#E3E4E3" }}
-          onClick={prevStepHandler}
-        >
+        <IconButton sx={{ bgcolor: "#E3E4E3" }} onClick={prevStepHandler}>
           <Image src={ArrowLeft.src} width={24} height={24} />
         </IconButton>
         <LinearProgress

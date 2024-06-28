@@ -62,6 +62,7 @@ export default function StepOne({ setStep }) {
               padding: "16px",
               borderRadius: "16px",
               border: "1px solid #bbb",
+              cursor: "pointer",
             },
           }}
           defaultValue={Date.now()}
@@ -69,11 +70,11 @@ export default function StepOne({ setStep }) {
       </Stack>
 
       <Box display="flex" gap="8px">
-        <Stack gap="8px">
+        <Stack gap="8px" width="50%">
           <Typography>وزن</Typography>
           <TextField placeholder="60kg"></TextField>
         </Stack>
-        <Stack gap="8px">
+        <Stack gap="8px" width="50%">
           <Typography>قد</Typography>
           <TextField placeholder="165cm"></TextField>
         </Stack>
