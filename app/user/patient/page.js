@@ -39,7 +39,10 @@ export default function PatientPage() {
         justifyContent="space-between"
         alignItems="center"
       >
-        <IconButton sx={{ p: "0px", m: "0px" }}>
+        <IconButton
+          sx={{ p: "0px", m: "0px" }}
+          onClick={() => router.push("/user/patient/profile")}
+        >
           <Image src={M1.src} width={56} height={56} />
         </IconButton>
         <IconButton sx={{ p: "0px", m: "0px" }}>
