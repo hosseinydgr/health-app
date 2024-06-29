@@ -53,7 +53,10 @@ export default function ProfilePage() {
         >
           <Image src={M2.src} width={56} height={56} />
         </IconButton>
-        <IconButton sx={{ p: "0px", m: "0px" }}>
+        <IconButton
+          sx={{ p: "0px", m: "0px" }}
+          onClick={() => router.push("/user/patient/doctors")}
+        >
           <Image src={M3.src} width={56} height={56} />
         </IconButton>
         <IconButton

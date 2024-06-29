@@ -7,53 +7,55 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import Call from "../../../../public/call.svg";
+import Chat from "../../../../public/chat.svg";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Heart from "../../../../public/heart.svg";
 import M1 from "../../../../public/m1.svg";
-import M2 from "../../../../public/m22.svg";
-import M3 from "../../../../public/m3.svg";
+import M2 from "../../../../public/m2.svg";
+import M3 from "../../../../public/m32.svg";
 import M4 from "../../../../public/m42.svg";
 import Tick from "../../../../public/tick.svg";
 import Clock from "../../../../public/clock.svg";
 import Hospital from "../../../../public/hospital.svg";
 import Doctor from "../../../../public/doctor.svg";
+import Bone from "../../../../public/bone.svg";
 import ArrowRight from "../../../../public/arrow-right.svg";
 import { useRouter } from "next/navigation";
 
-export default function Emergency() {
+export default function Doctors() {
   const router = useRouter();
   const [isSearch, setIsSearch] = useState(false);
-  const [isSearching, setIsSearching] = useState(false);
+  //   const [isSearching, setIsSearching] = useState(false);
 
-  useEffect(() => {
-    if (isSearch)
-      setTimeout(() => {
-        setIsSearching(false);
-      }, 2000);
-  }, [isSearch]);
+  //   useEffect(() => {
+  //     if (isSearch)
+  //       setTimeout(() => {
+  //         setIsSearching(false);
+  //       }, 2000);
+  //   }, [isSearch]);
 
-  return isSearching ? (
-    <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      width="100%"
-      height="100dvh"
-      bgcolor="#60A5FA"
-      sx={{
-        backgroundImage: "url(../../../../background2.svg)",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
-    >
-      <Typography fontSize="30px" textAlign="center" width="45%" color="white">
-        در حال جست‌وجو نزدیک‌ترین اورژانس ...
-      </Typography>
-    </Box>
-  ) : (
+  //   return isSearching ? (
+  //     <Box
+  //       display="flex"
+  //       alignItems="center"
+  //       justifyContent="center"
+  //       width="100%"
+  //       height="100dvh"
+  //       bgcolor="#60A5FA"
+  //       sx={{
+  //         backgroundImage: "url(../../../../background2.svg)",
+  //         backgroundPosition: "center",
+  //         backgroundRepeat: "no-repeat",
+  //         backgroundSize: "cover",
+  //       }}
+  //     >
+  //       <Typography fontSize="30px" textAlign="center" width="45%" color="white">
+  //         در حال جست‌وجو نزدیک‌ترین اورژانس ...
+  //       </Typography>
+  //     </Box>
+  //   ) : (
+  return (
     <>
       <Box
         p="8px"
@@ -76,13 +78,13 @@ export default function Emergency() {
         >
           <Image src={M1.src} width={56} height={56} />
         </IconButton>
-        <IconButton sx={{ p: "0px", m: "0px" }}>
-          <Image src={M2.src} width={56} height={56} />
-        </IconButton>
         <IconButton
           sx={{ p: "0px", m: "0px" }}
-          onClick={() => router.push("/user/patient/doctors")}
+          onClick={() => router.push("/user/patient/emergency")}
         >
+          <Image src={M2.src} width={56} height={56} />
+        </IconButton>
+        <IconButton sx={{ p: "0px", m: "0px" }}>
           <Image src={M3.src} width={56} height={56} />
         </IconButton>
         <IconButton
@@ -112,11 +114,11 @@ export default function Emergency() {
             // bgcolor="white"
           >
             <Stack gap="6px">
-              <Typography fontSize="30px">اورژانس</Typography>
-              <Typography>نزدیک ترین را انتخاب کنید</Typography>
+              <Typography fontSize="30px">پزشکان</Typography>
+              <Typography>از میان بهترین پزشکان انتخاب کنید.</Typography>
             </Stack>
             <IconButton>
-              <Image src={Call.src} width={64} height={64} />
+              <Image src={Chat.src} width={64} height={64} />
             </IconButton>
           </Box>
           <Box
@@ -131,7 +133,7 @@ export default function Emergency() {
             <Button
               onClick={() => {
                 setIsSearch(true);
-                setIsSearching(true);
+                // setIsSearching(true);
               }}
               fullWidth
               variant={isSearch ? "contained" : "text"}
@@ -152,7 +154,7 @@ export default function Emergency() {
 
         {!isSearch && (
           <>
-            <Box
+            {/* <Box
               display="flex"
               gap="12px"
               p="16px"
@@ -168,7 +170,7 @@ export default function Emergency() {
                 </Typography>
                 <Button color="error">تماس با پزشک</Button>
               </Stack>
-            </Box>
+            </Box> */}
 
             <Stack gap="8px" mx="16px">
               <Box
@@ -176,46 +178,92 @@ export default function Emergency() {
                 justifyContent="space-between"
                 alignItems="center"
               >
-                <Typography>بیمارستان های اطراف من</Typography>
-                <Button variant="text">تغییر آدرس</Button>
+                <Typography>قرارهای ملاقات من</Typography>
+                <Button variant="text">مشاهده همه</Button>
               </Box>
               <Stack bgcolor="white" p="16px" borderRadius="32px" gap="8px">
-                <Box
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="space-between"
-                  p="12px"
-                  borderRadius="32px"
-                  bgcolor="#F5F5F5"
-                >
-                  <Box display="flex" alignItems="center" gap="8px">
-                    <Image src={Hospital.src} width={72} height={72} />
-                    <Stack gap="6px">
-                      <Box display="flex" alignItems="center" gap="2px">
-                        <Typography>بیمارستان مهر</Typography>
-                        <Image src={Tick.src} width={20} height={20} />
-                      </Box>
-                      <Box display="flex" alignItems="center" gap="2px">
-                        <Image src={Clock.src} width={16} height={16} />
-                        <Typography>۷ دقیقه فاصله</Typography>
-                      </Box>
-                      <Box display="flex" alignItems="center" gap="2px">
-                        <Image src={Clock.src} width={16} height={16} />
-                        <Typography>501m</Typography>
-                      </Box>
-                    </Stack>
+                {new Array(2).fill(1).map(() => (
+                  <Box
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="space-between"
+                    p="12px"
+                    borderRadius="32px"
+                    bgcolor="#F5F5F5"
+                  >
+                    <Box display="flex" alignItems="center" gap="8px">
+                      <Image src={Doctor.src} width={72} height={72} />
+                      <Stack gap="6px">
+                        <Box display="flex" alignItems="center" gap="2px">
+                          <Typography>دکتر حسین حسینی</Typography>
+                          <Image src={Tick.src} width={20} height={20} />
+                        </Box>
+                        <Box display="flex" alignItems="center" gap="2px">
+                          <Image src={Bone.src} width={16} height={16} />
+                          <Typography>متخصص ارتوپد</Typography>
+                        </Box>
+                        <Box display="flex" alignItems="center" gap="2px">
+                          <Image src={Clock.src} width={16} height={16} />
+                          <Typography>۱۰:۳۰ - ۱۱:۰۰</Typography>
+                        </Box>
+                      </Stack>
+                    </Box>
+                    <IconButton>
+                      <Image src={ArrowRight.src} width={24} height={24} />
+                    </IconButton>
                   </Box>
-                  <IconButton>
-                    <Image src={ArrowRight.src} width={24} height={24} />
-                  </IconButton>
-                </Box>
+                ))}
+              </Stack>
+            </Stack>
+
+            <Stack gap="8px" mx="16px">
+              <Box
+                display="flex"
+                justifyContent="space-between"
+                alignItems="center"
+              >
+                <Typography>پزشکان نزدیک من</Typography>
+                <Button variant="text">مشاهده همه</Button>
+              </Box>
+              <Stack bgcolor="white" p="16px" borderRadius="32px" gap="8px">
+                {new Array(4).fill(1).map(() => (
+                  <Box
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="space-between"
+                    p="12px"
+                    borderRadius="32px"
+                    bgcolor="#F5F5F5"
+                  >
+                    <Box display="flex" alignItems="center" gap="8px">
+                      <Image src={Doctor.src} width={72} height={72} />
+                      <Stack gap="6px">
+                        <Box display="flex" alignItems="center" gap="2px">
+                          <Typography>دکتر حسین حسینی</Typography>
+                          <Image src={Tick.src} width={20} height={20} />
+                        </Box>
+                        <Box display="flex" alignItems="center" gap="2px">
+                          <Image src={Bone.src} width={16} height={16} />
+                          <Typography>متخصص ارتوپد</Typography>
+                        </Box>
+                        <Box display="flex" alignItems="center" gap="2px">
+                          <Image src={Clock.src} width={16} height={16} />
+                          <Typography>501m</Typography>
+                        </Box>
+                      </Stack>
+                    </Box>
+                    <IconButton>
+                      <Image src={ArrowRight.src} width={24} height={24} />
+                    </IconButton>
+                  </Box>
+                ))}
               </Stack>
             </Stack>
           </>
         )}
         {isSearch && (
           <>
-            <TextField placeholder="جست و جو کنید" />
+            {/* <TextField placeholder="جست و جو کنید" />
             <Stack gap="8px" mx="16px">
               <Typography>۱ نتیجه پیدا شد.</Typography>
               <Stack bgcolor="white" p="16px" borderRadius="32px" gap="8px">
@@ -249,10 +297,11 @@ export default function Emergency() {
                   </IconButton>
                 </Box>
               </Stack>
-            </Stack>
+            </Stack> */}
           </>
         )}
       </Stack>
     </>
   );
+  //   );
 }
