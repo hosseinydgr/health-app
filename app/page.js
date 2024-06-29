@@ -66,7 +66,7 @@ export default function Home() {
         backgroundSize: "cover",
       }}
     >
-      <Typography fontSize="48px">{percentage}</Typography>
+      <Typography fontSize="48px">{percentage}%</Typography>
     </Box>
   );
 }

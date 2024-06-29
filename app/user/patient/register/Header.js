@@ -15,7 +15,7 @@ export default function Header({ num, prevStepHandler }) {
   return (
     <>
       <Typography alignSelf="center" color="gray" mb="-30px">
-        {`${num} از ۶`}
+        {`${num} از 6`}
       </Typography>
       <Box display="flex" alignItems="center" gap="8px">
         <IconButton sx={{ bgcolor: "#E3E4E3" }} onClick={prevStepHandler}>

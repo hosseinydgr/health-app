@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import Image from "next/image";
 import ArrowLeftFilled from "../../../../../public/arrow-left-filled.svg";
+import ArrowRight from "../../../../../public/arrow-right.svg";
 import { useRouter } from "next/navigation";
 import { DatePicker } from "zaman";
 

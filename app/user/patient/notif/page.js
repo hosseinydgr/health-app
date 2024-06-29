@@ -21,7 +21,10 @@ export default function Notif() {
         gap="16px"
         alignItems="flex-start"
       >
-        <IconButton sx={{ bgcolor: "#60A5FA" }}>
+        <IconButton
+          sx={{ bgcolor: "#60A5FA" }}
+          onClick={() => router.push("/user/patient")}
+        >
           <Image src={ArrowLeftBlue.src} width={48} height={48} />
         </IconButton>
         <Box

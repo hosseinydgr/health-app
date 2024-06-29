@@ -28,7 +28,10 @@ export default function PatientData() {
         justifyContent="space-between"
         p="16px"
       >
-        <IconButton sx={{ p: "0px", m: "0px" }} onClick={() => router.back()}>
+        <IconButton
+          sx={{ p: "0px", m: "0px" }}
+          onClick={() => router.push("/user/patient")}
+        >
           <Image src={ArrowLeftFilled.src} width={56} height={56} />
         </IconButton>
         <Typography fontSize="20px"> داده‌های سلامت</Typography>
