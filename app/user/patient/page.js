@@ -1,7 +1,6 @@
 "use client";
 
 import { Box, Button, IconButton, Stack, Typography } from "@mui/material";
-import Logo from "../../../public/logo.svg";
 import Profile from "../../../public/profile.svg";
 import Notif from "../../../public/notif.svg";
 import Heart from "../../../public/heart.svg";
@@ -68,7 +67,10 @@ export default function PatientPage() {
               <Image src={Profile.src} width={56} height={56} />
             </IconButton>
             <Typography>شنبه، ۱۰ خرداد ۱۴۰۳</Typography>
-            <IconButton sx={{ p: "0px", m: "0px" }}>
+            <IconButton
+              sx={{ p: "0px", m: "0px" }}
+              onClick={() => router.push("/user/patient/notif")}
+            >
               <Image src={Notif.src} width={56} height={56} />
             </IconButton>
           </Box>
