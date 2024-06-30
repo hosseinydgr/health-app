@@ -215,7 +215,7 @@ export default function Emergency() {
         )}
         {isSearch && (
           <>
-            <TextField placeholder="جست و جو کنید" />
+            <TextField placeholder="جست و جو کنید" sx={{ mx: "16px" }} />
             <Stack gap="8px" mx="16px">
               <Typography>۱ نتیجه پیدا شد.</Typography>
               <Stack bgcolor="white" p="16px" borderRadius="32px" gap="8px">

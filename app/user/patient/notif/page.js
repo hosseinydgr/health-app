@@ -16,8 +16,8 @@ export default function Notif() {
       <Stack
         p="16px"
         pb="28px"
-        bgcolor="#60A5FA"
         borderRadius="0 0 48px 48px"
+        bgcolor="#60A5FA"
         gap="16px"
         alignItems="flex-start"
       >
@@ -125,7 +125,7 @@ export default function Notif() {
               <IconButton>
                 <Image src={Heart.src} width={24} height={24} />
               </IconButton>
-            </Box>{" "}
+            </Box>
             <List />
           </Stack>
         </>
